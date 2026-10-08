@@ -1,8 +1,7 @@
-import java.util.*;
 import java.io.*;
 import java.net.*;
 
-public class TCP_CharacterStream {
+public class TCP_CHARACTER_01 {
     public static void main(String[] args) throws Exception{
         Socket socket = new Socket("36.50.135.242", 2208);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -22,7 +21,7 @@ public class TCP_CharacterStream {
             for (String s : dataArray) {
                 s = s.trim();
                 if (s.endsWith(".edu")) {
-                    if (result.length() > 0) {
+                    if (!result.isEmpty()) {
                         result.append(", ");
                     }
                     result.append(s);
